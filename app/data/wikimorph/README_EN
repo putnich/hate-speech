@@ -1,0 +1,32 @@
+This archive contains a morphosyntactic lexicon for Serbian that can be used in POS-tagging, parsing and lemmatisation. The lexicon was developed as a part of the ParCoLab project (http://parcolab.univ-tlse2.fr/). It was mainly extracted from the serbo-croation edition of Wiktionary (sh.wiktionary.com).
+
+Author:	Aleksandra Miletic (UMR5263 CLLE, CNRS & University of Toulouse - Jean Jaurès, France)
+
+Contact: aleksandra.miletic at univ-tlse2.fr
+
+### General description:
+
+Number of unique wordforms: 1 226 638
+Number of unique lemmas: 117 445
+Number of unique triples <wordform, lemma, morphosyntactic description>: 3 066 214
+
+Format: [wordform][tab][lemma][tab][morphosyntactic description]
+Field separator: tab (\t)
+Character encoding: UTF-8
+EOL character: LF (\n)
+
+
+### Source: Contents of the serbo-croatian wiktionary (sh.wiktionary.com) in the form of the XML dump from 02/10/2015.
+
+
+### Licence
+Some rights reserved. This lexicon is distributed under the Creative Commons BY-SA 3.0 license (https://creativecommons.org/licenses/by-sa/3.0/deed.fr). Please read the license carefully before using the lexicon.
+
+### Reference
+If you are using this lexicon in your own research, please reference the following paper:
+
+Miletic, A. (2017) Building a morphosyntactic lexicon for Serbian from Wiktionary. 6e édition des Journées d'étude toulousaines (JéTou 2017). Toulouse, France.
+
+### Content description
+
+This lexicon was extracted from the serbo-croatian version of the Wiktionary. It was built with POS-tagging and parsing in mind, so it focuses on morphosyntactic information. Each line contains a unique triple <wordform, lemma, morphosyntactic description>. The morphosyntactic tags are the ones used in the ParCoLab project. A detailed description of the tag structure and possible feature values for each POS is given in the PDF documentation downloadable from the same page as the lexicon itself.

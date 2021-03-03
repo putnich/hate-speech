@@ -1,0 +1,32 @@
+Cette archive contient un lexique morphosyntaxique pour le serbe destiné à l'étiquetage morphosyntaxique, à la lemmatisation et au parsing. Le lexique a été dévelopé dans le cadre du projet ParCoLab (http://parcolab.univ-tlse2.fr/). Il a été principalement extrait de l'édition serbo-croate du Wiktionary (sh.wiktionary.com).
+
+Auteur : Aleksandra Miletic (UMR 5263 CLLE, CNRS & Université de Toulouse - Jean Jaurès, France)
+
+Contact : aleksandra.miletic at univ-tlse2.fr
+
+### Descriptif global
+
+Nombre de formes fléchies uniques : 1 226 638
+Nombre de lemmes uniques : 117 445
+Nombre de triplets uniques <forme fléchie, lemme, description morphosyntaxique> : 3 066 214
+
+Format : [forme fléchie][lemme][description morphosyntaxique]
+Séparateur de champs : tab (\t)
+Encodage de caractères : UTF-8
+Caractère de fin de ligne : LF (\n)
+
+### Source : contenu de l'édition serbo-croate du Wiktionary sous forme du dump XML du 02/10/2015.
+
+### Licence
+Certains droits sont réservés. Ce lexique est distribué sous la licence Creative Commons BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/deed.fr).
+
+### Référence
+Si vous utilisez ce lexique dans votre travail, vous êtes prié(e) de citer l'article suivant :
+
+Miletic, A. (2017) Building a morphosyntactic lexicon for Serbian from Wiktionary. 6e édition des Journées d'étude toulousaines (JéTou 2017). Toulouse, France.
+
+### Descriptif du contenu
+
+Ce lexique a été extrait à partir de l'édition serbo-croate du Wiktionary. Il est destiné à l'étiquetage morphosyntaxique et au parsing ; il se focalise par conséquent sur les informations morphosyntaxiques. Chaque ligne contient un triplet unique <forme fléchie, lemme, description morphosyntaxique>. Les étiquettes morphosyntaxiques utilisées sont celles du projet ParCoLab. Une description détaillée de la structure des étiquettes et des valeurs possibles de chaque trait est donnée dans la documentation PDF téléchargeable à partir de la même page que le lexique.
+
+
