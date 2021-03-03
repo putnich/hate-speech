@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Klasifikacija govora mržnje
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <h4>Unesite reč ili izraz</h4>
+  <div class="style-form-within">
+
+    {% block content %}
+    <div style="width:400px">
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+      </div>
+      {% endfor %}
+
+      {% block page_content %}{% endblock %}
+    </div>
+    {% endblock %}
+
+    <form method="post" action="{{ url_for('predict') }}">
+      <div class="form-group">
+        <input name="text_field" id="text_field" style="height: 50px;width:400px" type="text" class="form-control"
+          placeholder="Unesite tekst" />
+      </div>
+      <button id="button-submit" type="submit" class="btn btn-primary">Prosledite</button>
+
+    </form>
+
+    <br>
+    <h5>Klasifikujte tekst <br><small class="text-muted">Paragrafi moraju biti odvojeni novim redom</small></h5>
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <input type="file" name="file">
+        <input type="submit" value="Učitajte" class="btn btn-primary" disabled>
+      </div>
+    </form>
+
+  </div>
+  <script>
+    $(document).ready(
+      function () {
+        $("#button-submit").attr('disabled', true);
+        $("#text_field").keyup(
+          function () {
+            if ($(this).val().length != 0)
+              $("#button-submit").attr('disabled', false);
+            else
+              $("#button-submit").attr('disabled', true);
+          }
+        );
+        $('input:file').change(
+          function () {
+            if ($(this).val()) {
+              $('input:submit').attr('disabled', false);
+            }
+            else {
+              $('input:submit').attr('disabled', true);
+            }
+          }
+        );
+      }
+
+    );
+  </script>
+</body>
+
+</html>

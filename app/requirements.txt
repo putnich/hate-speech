@@ -1,0 +1,10 @@
+sklearn
+pandas
+flask
+gunicorn
+gevent
+pybind11
+emoji
+cyrtranslit
+joblib
+requests
