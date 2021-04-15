@@ -26,10 +26,6 @@ def wv2fi(fpath):
                 mapping[l[0]] = i+1
     return mapping
 
-
-mapping = wv2fi(WORD_MODEL)
-morph = wv2fi(WIKI_MORPH)
-
 def lemmatize(word, tag):
     if word.isnumeric():
         res = "{}\t{}\t{}".format(word, 'Num', word)
@@ -98,6 +94,13 @@ def loadTagger():
     return tagger, le
 
 
+mapping = wv2fi(WORD_MODEL)
+morph = wv2fi(WIKI_MORPH)
+
+# Load classifiers
+knn = loadClassifier()
+tagger, le = loadTagger()
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -105,8 +108,6 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    knn = loadClassifier()
-    tagger, le = loadTagger()
     input_text = request.form['text_field']
     if len(input_text) > 30:
         flash("Unesite tekst do maksimalno 30 karaktera ili koristite učitavanje fajla.")
@@ -138,9 +139,6 @@ def upload():
 
         with open(path, 'r', encoding='utf-8') as f:
             uploaded = f.read()
-       
-        knn = loadClassifier()
-        tagger, le = loadTagger()
         
         result = "Prediction\tText\n"
         lines = uploaded.split('\n')
@@ -162,4 +160,5 @@ def upload():
         return send_file(path, as_attachment=True)
 
 if __name__ == '__main__':
+    
     app.run()
